@@ -1,0 +1,23 @@
+<template>
+    <div style="height: 450px;">
+        <lightning-datatable
+                key-field="id"
+                data={data}
+                columns={columns}
+                hide-checkbox-column={hiderowcheckboxes}
+                onrowselection={getSelectedName}
+                enable-infinite-loading
+                onloadmore={loadMoreData}
+                onrowaction={handleRowAction}
+                is-loading={tableLoadingState}
+                onsave={handleSave}
+                draft-values={draftValues}
+                default-sort-direction={defaultSortDirection}
+                sorted-by={sortedBy}
+                sorted-direction={sortDirection}
+                onsort={updateColumnSorting}
+        >
+        </lightning-datatable>
+        {loadMoreStatus}
+    </div>
+</template>
